@@ -30,7 +30,7 @@ while True:
 
 
 
-    if precip > 0 or wind> 1:
+    if precip > 5 or wind> 60:
         print("تحذير! عاصفة قادمة.")  
         print("Warning! A storm is coming.")
         print("precipitation:", precip)
