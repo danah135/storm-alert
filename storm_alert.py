@@ -31,7 +31,7 @@ try:
         data_msg= {"chat_id": channel, "text": message}
         response = requests.post(telegram_url, json=data_msg, timeout=30)
         print(response.json())
-else:
+    else:
         print("الطقس مستقر.")
         print("The weather is stable.")
 except Exception as e:
