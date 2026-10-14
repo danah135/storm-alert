@@ -1,7 +1,7 @@
 import requests
 import time
-
-BOT_TOKEN = "8724424096:AAECKs38DNqypWQTJ_ikKhQaF-grwYXAsPA"
+import os
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 channel = "@rainyWeatherBots"
 url= "https://api.open-meteo.com/v1/forecast?latitude=24.71&longitude=46.68&current=precipitation,wind_speed_10m,temperature_2m"
 telegram_url= f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
