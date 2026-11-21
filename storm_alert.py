@@ -60,13 +60,12 @@ class HealthCheckHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b'OK')
 
+    def do_HEAD(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+
     def log_message(self, format, *args):
-        pass
-
-def run_http_server():
-    server = HTTPServer(('0.0.0.0', PORT), HealthCheckHandler)
-    server.serve_forever()
-
-if __name__ == "__main__":
+        pass__ == "__main__":
     threading.Thread(target=run_http_server, daemon=True).start()
     main()  
