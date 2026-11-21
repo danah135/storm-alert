@@ -67,7 +67,7 @@ class HealthCheckHandler(BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):
         pass
- def run_http_server():
+def run_http_server():
       server= HTTPServer(('0.0.0.0',PORT),HealthCheckHandler)
       server.serve_forever()
 if __name__ == "__main__":
