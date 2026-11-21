@@ -66,6 +66,10 @@ class HealthCheckHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def log_message(self, format, *args):
-        pass__ == "__main__":
+        pass
+ def run_http_server():
+      server= HTTPServer(('0.0.0.0',PORT),HealthCheckHandler)
+      server.serve_forever()
+if __name__ == "__main__":
     threading.Thread(target=run_http_server, daemon=True).start()
     main()  
