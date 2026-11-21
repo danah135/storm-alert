@@ -7,7 +7,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 channel = os.environ.get("channel")
 url= "https://api.open-meteo.com/v1/forecast?latitude=24.71&longitude=46.68&current=precipitation,wind_speed_10m,temperature_2m"
 telegram_url= f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
-CHECK_EVERY=60
+CHECK_EVERY=3600
 PORT = int(os.environ.get("PORT", 10000))
 
 def check_weather():
