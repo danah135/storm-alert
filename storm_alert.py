@@ -22,7 +22,7 @@ def check_weather():
           print("Wind Speed:", wind)
           print("Temperature:", temperature)
 
-          if precip > 0 or wind>0:
+          if precip > 1.5 or wind>50:
               print(" تحذير! عاصفة قادمة على مدينة الرياض.")  
               print("Warning! A storm is coming.")
               print("precipitation:", precip)
