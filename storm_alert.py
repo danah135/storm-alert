@@ -12,35 +12,35 @@ PORT = int(os.environ.get("PORT", 10000))
 
 def check_weather():
      try:   
-     response = requests.get(url, timeout=30)
-     data = response.json()
-     precip=data['current']['precipitation']
-     wind= data['current']['wind_speed_10m']
-     temperature = data['current']['temperature_2m']
+          response = requests.get(url, timeout=30)
+          data = response.json()
+          precip=data['current']['precipitation']
+          wind= data['current']['wind_speed_10m']
+          temperature = data['current']['temperature_2m']
 
-     print("Precipitation:", precip)
-     print("Wind Speed:", wind)
-     print("Temperature:", temperature)
+          print("Precipitation:", precip)
+          print("Wind Speed:", wind)
+          print("Temperature:", temperature)
 
-     if precip > 0 or wind>0:
-         print(" تحذير! عاصفة قادمة على مدينة الرياض.")  
-         print("Warning! A storm is coming.")
-         print("precipitation:", precip)
-         print("wind speed:", wind)
-         print("temperature:", temperature)
+          if precip > 0 or wind>0:
+              print(" تحذير! عاصفة قادمة على مدينة الرياض.")  
+              print("Warning! A storm is coming.")
+              print("precipitation:", precip)
+              print("wind speed:", wind)
+              print("temperature:", temperature)
 
       
-         message=(f"تنبيه! عاصفة قادمة. \n\nالامطار: {precip} \nسرعة الرياح: {wind} \nدرجة الحرارة: {temperature}"
-             f"ينصح بعدم الخروج من المنزل"
-             )
-         data_msg= {"chat_id": channel, "text": message}
-         response = requests.post(telegram_url, json=data_msg, timeout=30)
-         print(response.json())
-     else:
-         print("الطقس مستقر.")
-         print("The weather is stable.")
-except Exception as e:
-  print(f"خطأ:{type(e).__name}")
+              message=(f"تنبيه! عاصفة قادمة. \n\nالامطار: {precip} \nسرعة الرياح: {wind} \nدرجة الحرارة: {temperature}"
+                  f"ينصح بعدم الخروج من المنزل"
+                  )
+              data_msg= {"chat_id": channel, "text": message}
+              response = requests.post(telegram_url, json=data_msg, timeout=30)
+              print(response.json())
+          else:
+              print("الطقس مستقر.")
+              print("The weather is stable.")
+     except Exception as e:
+       print(f"خطأ:{type(e).__name}")
 
 def main():
     while True:
