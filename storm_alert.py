@@ -17,7 +17,7 @@ try:
     print("Wind Speed:", wind)
     print("Temperature:", temperature)
 
-    if precip > 0.0 or wind> 60:
+    if precip > 0 or wind>0:
         print(" تحذير! عاصفة قادمة على مدينة الرياض.")  
         print("Warning! A storm is coming.")
         print("precipitation:", precip)
