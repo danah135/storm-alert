@@ -43,7 +43,7 @@ def check_weather():
                  print("الطقس مستقر.")
                  print("The weather is stable.")
      except Exception as e:
-       print(f"خطأ:{type(e).__name}")
+       print(f"خطأ:{type(e).__name__}")
 
 def main():
     while True:
